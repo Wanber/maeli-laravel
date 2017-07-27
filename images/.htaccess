@@ -1,0 +1,12 @@
+# BEGIN RESIZE
+<IfModule mod_rewrite.c>
+
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !index\.php [NC]
+RewriteRule ^(.*)\.(png|jpg|jpeg|bmp|gif)$ index.php?src=$1.$2&%{QUERY_STRING} [L]
+
+</IfModule>
+
+# END RESIZE
